@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dsznajder.es7-react-js-snippets",
+    "styled-components.vscode-styled-components",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "usernamehm.errorlens",
+    "wix.vscode-import-cost",
+    "wallabyjs.console-ninja",
+    "eamodio.gitlens",
+    "aaron-bond.better-comments"
+  ]
+}
