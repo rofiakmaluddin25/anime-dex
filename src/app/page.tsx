@@ -1,10 +1,9 @@
-import { Button, Input } from '@/components/ui';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
   return (
     <>
-      <Button>Test</Button>
-      <Input label="Test" error="Test" fullWidth placeholder="Input here" />
+      <Navbar />
     </>
   );
 }
