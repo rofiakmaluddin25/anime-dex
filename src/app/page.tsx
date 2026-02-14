@@ -1,3 +1,10 @@
+import { Button, Input } from '@/components/ui';
+
 export default function Home() {
-  return 'Welcome';
+  return (
+    <>
+      <Button>Test</Button>
+      <Input label="Test" error="Test" fullWidth placeholder="Input here" />
+    </>
+  );
 }
