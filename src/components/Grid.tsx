@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import Card, { CardProps } from './Card';
 import CardSkeleton from './CardSkeleton';
+import EmptyState from './EmptyState';
 
 const GridContainer = styled.div`
   display: grid;
@@ -61,6 +62,15 @@ export default function Grid({ title = 'Discover Anime', items, isLoading = fals
             <CardSkeleton key={index} />
           ))}
         </GridContainer>
+      </>
+    );
+  }
+
+  if (items.length === 0) {
+    return (
+      <>
+        {title && <SectionTitle>{title}</SectionTitle>}
+        <EmptyState />
       </>
     );
   }

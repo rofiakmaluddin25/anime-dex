@@ -8,9 +8,6 @@ const NavbarContainer = styled.nav`
   background: ${(props) => props.theme.colors.gray[900]};
   border-bottom: 1px solid ${(props) => props.theme.colors.gray[800]};
   padding: ${(props) => props.theme.spacing.md} ${(props) => props.theme.spacing.xl};
-  display: flex;
-  align-items: center;
-  gap: ${(props) => props.theme.spacing.xl};
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -19,6 +16,17 @@ const NavbarContainer = styled.nav`
 
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     padding: ${(props) => props.theme.spacing.sm} ${(props) => props.theme.spacing.md};
+  }
+`;
+
+const NavbarContent = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: ${(props) => props.theme.spacing.xl};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     gap: ${(props) => props.theme.spacing.md};
   }
 `;
@@ -105,16 +113,18 @@ export default function Navbar({ onSearch }: NavbarProps) {
 
   return (
     <NavbarContainer>
-      <LogoContainer href="/">
-        <LogoIcon>A</LogoIcon>
-        <LogoText>
-          Anime<LogoTextAccent>Dex</LogoTextAccent>
-        </LogoText>
-      </LogoContainer>
+      <NavbarContent>
+        <LogoContainer href="/">
+          <LogoIcon>A</LogoIcon>
+          <LogoText>
+            Anime<LogoTextAccent>Dex</LogoTextAccent>
+          </LogoText>
+        </LogoContainer>
 
-      <SearchContainer>
-        <Input placeholder="Search anime..." icon={<SearchIcon />} onChange={handleSearch} />
-      </SearchContainer>
+        <SearchContainer>
+          <Input placeholder="Search anime..." icon={<SearchIcon />} onChange={handleSearch} />
+        </SearchContainer>
+      </NavbarContent>
     </NavbarContainer>
   );
 }
