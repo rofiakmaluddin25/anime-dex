@@ -22,6 +22,12 @@ export const theme = {
       800: '#1f2937',
       900: '#111827',
     },
+    purple: {
+      300: '#c4b5fd',
+      400: '#a78bfa',
+      500: '#8b5cf6',
+      600: '#7c3aed',
+    },
   },
   spacing: {
     xs: '0.25rem',

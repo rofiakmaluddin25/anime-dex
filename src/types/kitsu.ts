@@ -26,13 +26,16 @@ export interface KitsuAnimeAttributes {
   startDate?: string;
   endDate?: string;
   episodeCount?: number;
+  episodeLength?: number;
   status?: string;
+  subtype?: string;
   ageRating?: string;
   ageRatingGuide?: string;
   popularityRank?: number;
   ratingRank?: number;
   userCount?: number;
   favoritesCount?: number;
+  youtubeVideoId?: string;
 }
 
 export interface KitsuAnime {

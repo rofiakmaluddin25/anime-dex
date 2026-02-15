@@ -104,9 +104,10 @@ const SearchIcon = () => (
 
 interface NavbarProps {
   onSearch?: (query: string) => void;
+  showSearch?: boolean;
 }
 
-export default function Navbar({ onSearch }: NavbarProps) {
+export default function Navbar({ onSearch, showSearch = true }: NavbarProps) {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     onSearch?.(e.target.value);
   };
@@ -121,9 +122,11 @@ export default function Navbar({ onSearch }: NavbarProps) {
           </LogoText>
         </LogoContainer>
 
-        <SearchContainer>
-          <Input placeholder="Search anime..." icon={<SearchIcon />} onChange={handleSearch} />
-        </SearchContainer>
+        {showSearch && (
+          <SearchContainer>
+            <Input placeholder="Search anime..." icon={<SearchIcon />} onChange={handleSearch} />
+          </SearchContainer>
+        )}
       </NavbarContent>
     </NavbarContainer>
   );
