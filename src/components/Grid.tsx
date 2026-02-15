@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import Card, { CardProps } from './Card';
+import CardSkeleton from './CardSkeleton';
 
 const GridContainer = styled.div`
   display: grid;
@@ -44,15 +45,6 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const LoadingContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-  color: ${(props) => props.theme.colors.gray[400]};
-  font-size: ${(props) => props.theme.fontSize.lg};
-`;
-
 interface GridProps {
   title?: string;
   items: CardProps[];
@@ -61,7 +53,16 @@ interface GridProps {
 
 export default function Grid({ title = 'Discover Anime', items, isLoading = false }: GridProps) {
   if (isLoading) {
-    return <LoadingContainer>Loading...</LoadingContainer>;
+    return (
+      <>
+        {title && <SectionTitle>{title}</SectionTitle>}
+        <GridContainer>
+          {Array.from({ length: 10 }).map((_, index) => (
+            <CardSkeleton key={index} />
+          ))}
+        </GridContainer>
+      </>
+    );
   }
 
   return (
